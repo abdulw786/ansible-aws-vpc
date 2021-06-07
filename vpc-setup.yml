@@ -139,5 +139,9 @@
             gateway_id: "{{NATGW_out.gateway_id}}"
       register: privRT_out
 
+    - debug:
+        var: NATGW_out
+
+
 
 
