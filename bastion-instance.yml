@@ -40,8 +40,6 @@
     - debug:
        var: BastionSG_out
   
-    - pip:
-        name: boto  
     - name: Creating Bastion Host
       ec2:
         key_name: vprofile-key
