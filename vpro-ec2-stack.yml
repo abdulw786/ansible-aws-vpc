@@ -1,0 +1,8 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Import VPC IDs output Variable 
+      include_vars: vars/vpc-output_vars
+    - name: Import VPC Variables
+      include_vars: vars/vpc_setup
