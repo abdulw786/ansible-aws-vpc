@@ -67,7 +67,7 @@
             # ec2 isntances
     - name: Creating Nginx web01
       ec2:
-        key_name: vprokey
+        key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
         image: ami-0747bdcabd34c712a
