@@ -21,7 +21,7 @@
         content: "{{vprokey_out.key.private_key}}"
         dest: "./loginkey_vpro.pem"
         mode: 0600
-      when: key_out.changed
+      when: vprokey_out.changed
 
     # - name: remove key pair by name
     #   ec2_key:
