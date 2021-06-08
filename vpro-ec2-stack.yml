@@ -8,25 +8,25 @@
     - name: Import vprofile 
       include_vars: vars/vproStackSetup
 
-    # - name: Create vprofile ec2 key
-    #   ec2_key:
-    #     name: vprofile-key
-    #     region: "{{region}}"
-    #   register: vprokey_out
-    # - debug:
-    #     var: vprokey_out
-    
-    # - name: Save private key into file loginkey_vpro.pem
-    #   copy:
-    #     content: "{{vprokey_out.key.private_key}}"
-    #     dest: "./loginkey_vpro.pem"
-    #     mode: 0600
-    #   when: key_out.changed
-
-    - name: remove key pair by name
+    - name: Create vprofile ec2 key
       ec2_key:
-        name: vprokey_out
+        name: vprofile-key
         region: "{{region}}"
-        state: absent
+      register: vprokey_out
+    - debug:
+        var: vprokey_out
+    
+    - name: Save private key into file loginkey_vpro.pem
+      copy:
+        content: "{{vprokey_out.key.private_key}}"
+        dest: "./loginkey_vpro.pem"
+        mode: 0600
+      when: key_out.changed
+
+    # - name: remove key pair by name
+    #   ec2_key:
+    #     name: vprokey_out
+    #     region: "{{region}}"
+    #     state: absent
 
 
